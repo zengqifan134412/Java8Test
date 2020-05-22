@@ -1,9 +1,6 @@
 package com.zqf.stream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,12 +13,31 @@ public class StreamTest3 {
 //        String[] strings = stream.toArray(String[]::new);
 //        Arrays.asList(strings).forEach(System.out::println);
 
-        Stream<String> stream = Stream.of("hello", "hello world", "hello Java");
+//        Stream<String> stream = Stream.of("hello", "hello world", "hello Java");
 
 //        List<String> list = stream.collect(Collectors.toList());
 //        List<String> list = stream.collect(() -> new ArrayList<String>(), (thisList, item) -> thisList.add(item), (left, right) -> left.addAll(right));
-        List<String> list = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
-        list.forEach(System.out::println);
+//        List<String> list = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+//        list.forEach(System.out::println);
+
+//        Stream<String> stream = Stream.of("hello", "hello world", "hello Java");
+//
+//        List<String> list = stream.collect(Collectors.toCollection(ArrayList::new));
+//
+//        list.forEach(System.out::println);
+
+//        Stream<String> stream = Stream.of("hello", "hello world", "hello Java");
+//
+//        Set<String> set  = stream.collect(Collectors.toCollection(TreeSet::new));
+//
+//        set.forEach(System.out::println);
+
+
+        Stream<String> stream = Stream.of("hello", "hello world", "hello Java");
+
+        String collect = stream.collect(Collectors.joining()).toString();
+
+        System.out.println(collect);
 
     }
 }
